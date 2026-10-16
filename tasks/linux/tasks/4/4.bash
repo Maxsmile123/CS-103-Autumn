@@ -1,1 +1,1 @@
-grep -v '^[[:space:]]*$' file.txt| cat -n
+cat -b file.txt
