@@ -2,3 +2,4 @@
 # Trojan
 # Process
 # Backdoor
+grep -rlE 'Trojan|Process|Backdoor' . | sed 's#^\./##'
