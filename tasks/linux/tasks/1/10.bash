@@ -2,3 +2,4 @@
 # Trojan
 # Process
 # Backdoor
+grep -or -l 'Trojan\|Process\|Backdoor'
