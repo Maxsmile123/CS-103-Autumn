@@ -2,3 +2,4 @@
 # Trojan
 # Process
 # Backdoor
+grep . -r -I -i -l -w -e "Trojan" -e "Process" -e "Backdoor"
