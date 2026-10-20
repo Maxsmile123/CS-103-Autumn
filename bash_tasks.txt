@@ -1,0 +1,30 @@
+1 Задача
+for f in *.txt; do mv "$f" "${f%.txt}.md"; done
+
+2 Задача
+touch {a..z}.txt
+
+3 Задача
+XZ_OPT=-9e tar -cJf trash.tar.xz trash.tar
+
+4 Задача
+mv me.txt ../../chill/home/
+
+5 Задача
+find . -type f -size +1048575c -size -104857601c -printf "%s %p\n" | sort -nr | head -n 7
+
+6 Задача
+grep -oP '^vk\.com\s*:\s*\K.*' passwords.txt
+
+7 Задача
+find . -type f -name "*.mp4" ! -iname "*remix*"
+
+8 Задача
+grep -nw "def" file.py | grep -o "^[0-9]*"
+
+9 Задача
+find . -type d
+
+10 Задача
+#!/bin/bash
+find . -maxdepth 1 -type f -empty -exec rm {} +
