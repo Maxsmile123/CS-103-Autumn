@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/fund/lessons/matrix/cmake-build-debug",
+  "command": "C:\\Users\\Vsevolod\\CLION2~1.2\\bin\\mingw\\bin\\gcc.exe -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\matrix.dir\\main.c.obj -c C:\\fund\\lessons\\matrix\\main.c",
+  "file": "C:/fund/lessons/matrix/main.c",
+  "output": "C:/fund/lessons/matrix/cmake-build-debug/CMakeFiles/matrix.dir/main.c.obj"
+}
+]
