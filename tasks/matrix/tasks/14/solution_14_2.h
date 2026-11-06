@@ -9,12 +9,21 @@ int main() {
 
     int n;
     while (fscanf(f,"%d", &n) ==1) {
+        if (n < 1 || n > 8) {
+            printf("Incorrect input\n");
+            fclose(f);
+            return 1;
+        }
         int a[n][n];
         int v[n][n];
         int min;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j<n; j++) {
-                fscanf(f,"%d",&a[i][j]);
+                if (fscanf(f,"%d",&a[i][j]) != 1) {
+                    printf("Incorrect input\n");
+                    fclose(f);
+                    return 1;
+                }
                 if (i==0 && j==0) {
                     min = a[i][j];
                 }
@@ -41,3 +50,4 @@ int main() {
     return 0;
 
 }
+
