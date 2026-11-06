@@ -2,11 +2,17 @@
 
 int main() {
     int n;
-    scanf("%d", &n);
+    if (scanf("%d", &n) != 1 || n<1 || n>7) {
+        printf("Incorrect size\n");
+        return 1;
+    }
     int a[n][n];
     for (int i = 0; i<n; i++) {
         for (int j = 0; j<n; j++) {
-            scanf("%d",&a[i][j]);
+            if (scanf("%d",&a[i][j]) !=1) {
+                printf("Incorrect input\n");
+                return 1;
+            }
         }
     }
     for (int k = -1; k<(n*2-1);k++) {
