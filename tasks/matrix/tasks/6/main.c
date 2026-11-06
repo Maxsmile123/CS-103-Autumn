@@ -51,7 +51,13 @@ int main(void) {
     }
 
     for (int i = 0; i < rows; ++i) {
-        printf("%.15g\n", matrix[i][last_col]);
+        for (int j = 0; j < cols; ++j) {
+            if (j > 0) {
+                putchar(' ');
+            }
+            printf("%.15g", matrix[i][j]);
+        }
+        putchar('\n');
     }
 
     free(matrix);
