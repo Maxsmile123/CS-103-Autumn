@@ -3,11 +3,13 @@
 #include <stdlib.h>
 
 int main(void) {
-    int rows;
-    int cols;
-    if (scanf("%d%d", &rows, &cols) != 2 || rows <= 0 || cols <= 0) {
+    int n;
+    if (scanf("%d", &n) != 1 || n <= 0) {
         return 1;
     }
+    
+    int rows = n;
+    int cols = n;
 
     if ((size_t)rows > SIZE_MAX / sizeof(double) / (size_t)cols) {
         return 1;
