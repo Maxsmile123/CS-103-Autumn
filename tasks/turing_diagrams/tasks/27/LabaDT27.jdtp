@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "id": "proj-bin2ter",
+  "name": "BinToTer",
+  "alphabet": " 012",
+  "rootBodyIds": [
+    "root"
+  ],
+  "createdAt": "2026-10-09T00:00:00.000Z",
+  "updatedAt": "2026-10-09T00:00:00.000Z",
+  "bodies": [
+    {
+      "id": "root",
+      "name": "BinToTer",
+      "alphabet": " 012",
+      "machines": [
+        {
+          "id": "r-start",
+          "type": "start",
+          "center": {
+            "x": 80,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-lw",
+          "type": "leftWord",
+          "center": {
+            "x": 180,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-l",
+          "type": "left",
+          "center": {
+            "x": 280,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-w0",
+          "type": "write",
+          "sign": "0",
+          "center": {
+            "x": 380,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-rw2",
+          "type": "rightWord",
+          "center": {
+            "x": 480,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 2,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-dec",
+          "type": "complex",
+          "name": "Dec",
+          "innerId": "dec",
+          "center": {
+            "x": 600,
+            "y": 200
+          },
+          "size": {
+            "x": 56,
+            "y": 56
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-lw2",
+          "type": "leftWord",
+          "center": {
+            "x": 600,
+            "y": 340
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-inc",
+          "type": "complex",
+          "name": "Inc",
+          "innerId": "inc",
+          "center": {
+            "x": 480,
+            "y": 340
+          },
+          "size": {
+            "x": 56,
+            "y": 56
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-clear",
+          "type": "complex",
+          "name": "Clear",
+          "innerId": "clear",
+          "center": {
+            "x": 740,
+            "y": 200
+          },
+          "size": {
+            "x": 56,
+            "y": 56
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        },
+        {
+          "id": "r-fin",
+          "type": "finish",
+          "center": {
+            "x": 860,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "root"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "r-t1",
+          "startMachineId": "r-start",
+          "finishMachineId": "r-lw",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t2",
+          "startMachineId": "r-lw",
+          "finishMachineId": "r-l",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t3",
+          "startMachineId": "r-l",
+          "finishMachineId": "r-w0",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t4",
+          "startMachineId": "r-w0",
+          "finishMachineId": "r-rw2",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t5",
+          "startMachineId": "r-rw2",
+          "finishMachineId": "r-dec",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t6",
+          "startMachineId": "r-dec",
+          "finishMachineId": "r-lw2",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              "0",
+              "1"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t7",
+          "startMachineId": "r-dec",
+          "finishMachineId": "r-clear",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t8",
+          "startMachineId": "r-lw2",
+          "finishMachineId": "r-inc",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t9",
+          "startMachineId": "r-inc",
+          "finishMachineId": "r-rw2",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "r-t10",
+          "startMachineId": "r-clear",
+          "finishMachineId": "r-fin",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        }
+      ]
+    },
+    {
+      "id": "dec",
+      "name": "Dec",
+      "alphabet": " 012",
+      "machines": [
+        {
+          "id": "dec-start",
+          "type": "start",
+          "center": {
+            "x": 80,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "dec"
+        },
+        {
+          "id": "dec-l",
+          "type": "left",
+          "center": {
+            "x": 220,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "dec"
+        },
+        {
+          "id": "dec-w1",
+          "type": "write",
+          "sign": "1",
+          "center": {
+            "x": 220,
+            "y": 80
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "dec"
+        },
+        {
+          "id": "dec-w0",
+          "type": "write",
+          "sign": "0",
+          "center": {
+            "x": 380,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "dec"
+        },
+        {
+          "id": "dec-fin",
+          "type": "finish",
+          "center": {
+            "x": 380,
+            "y": 340
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "dec"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "dec-t1",
+          "startMachineId": "dec-start",
+          "finishMachineId": "dec-l",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "dec-t2",
+          "startMachineId": "dec-l",
+          "finishMachineId": "dec-w1",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              "0"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "dec-t3",
+          "startMachineId": "dec-l",
+          "finishMachineId": "dec-w0",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              "1"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "dec-t4",
+          "startMachineId": "dec-l",
+          "finishMachineId": "dec-fin",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "dec-t5",
+          "startMachineId": "dec-w1",
+          "finishMachineId": "dec-l",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "dec-t6",
+          "startMachineId": "dec-w0",
+          "finishMachineId": "dec-fin",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        }
+      ]
+    },
+    {
+      "id": "inc",
+      "name": "Inc",
+      "alphabet": " 012",
+      "machines": [
+        {
+          "id": "inc-start",
+          "type": "start",
+          "center": {
+            "x": 80,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "inc"
+        },
+        {
+          "id": "inc-l",
+          "type": "left",
+          "center": {
+            "x": 220,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "inc"
+        },
+        {
+          "id": "inc-w0",
+          "type": "write",
+          "sign": "0",
+          "center": {
+            "x": 220,
+            "y": 80
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "inc"
+        },
+        {
+          "id": "inc-w1",
+          "type": "write",
+          "sign": "1",
+          "center": {
+            "x": 380,
+            "y": 120
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "inc"
+        },
+        {
+          "id": "inc-w2",
+          "type": "write",
+          "sign": "2",
+          "center": {
+            "x": 380,
+            "y": 280
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "inc"
+        },
+        {
+          "id": "inc-fin",
+          "type": "finish",
+          "center": {
+            "x": 520,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "inc"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "inc-t1",
+          "startMachineId": "inc-start",
+          "finishMachineId": "inc-l",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "inc-t2",
+          "startMachineId": "inc-l",
+          "finishMachineId": "inc-w1",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "inc-t3",
+          "startMachineId": "inc-l",
+          "finishMachineId": "inc-w2",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              "1"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "inc-t4",
+          "startMachineId": "inc-l",
+          "finishMachineId": "inc-w0",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "inc-t5",
+          "startMachineId": "inc-w0",
+          "finishMachineId": "inc-l",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "inc-t6",
+          "startMachineId": "inc-w1",
+          "finishMachineId": "inc-fin",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "inc-t7",
+          "startMachineId": "inc-w2",
+          "finishMachineId": "inc-fin",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        }
+      ]
+    },
+    {
+      "id": "clear",
+      "name": "Clear",
+      "alphabet": " 012",
+      "machines": [
+        {
+          "id": "clr-start",
+          "type": "start",
+          "center": {
+            "x": 80,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "clear"
+        },
+        {
+          "id": "clr-rw",
+          "type": "rightWord",
+          "center": {
+            "x": 200,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "clear"
+        },
+        {
+          "id": "clr-l",
+          "type": "left",
+          "center": {
+            "x": 320,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "clear"
+        },
+        {
+          "id": "clr-we",
+          "type": "write",
+          "sign": " ",
+          "center": {
+            "x": 320,
+            "y": 80
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "clear"
+        },
+        {
+          "id": "clr-fin",
+          "type": "finish",
+          "center": {
+            "x": 460,
+            "y": 200
+          },
+          "size": {
+            "x": 48,
+            "y": 48
+          },
+          "power": 1,
+          "parentBodyId": "clear"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "clr-t1",
+          "startMachineId": "clr-start",
+          "finishMachineId": "clr-rw",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "clr-t2",
+          "startMachineId": "clr-rw",
+          "finishMachineId": "clr-l",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "clr-t3",
+          "startMachineId": "clr-l",
+          "finishMachineId": "clr-we",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              "0",
+              "1"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "clr-t4",
+          "startMachineId": "clr-l",
+          "finishMachineId": "clr-fin",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        },
+        {
+          "id": "clr-t5",
+          "startMachineId": "clr-we",
+          "finishMachineId": "clr-l",
+          "routingPoints": [],
+          "conditions": {
+            "enabledSigns": [
+              " ",
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "conditionsLabelT": 0.5
+        }
+      ]
+    }
+  ]
+}
