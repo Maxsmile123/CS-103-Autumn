@@ -3,3 +3,4 @@
 hey.uy@gmail.com
 NiceTask@gmail.com
 '''
+grep -Eio '[a-zA-Z0-9._%+-]+@gmail\.com' personal.txt

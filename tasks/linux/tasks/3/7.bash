@@ -11,3 +11,4 @@ Rammstain_Sonne.mp3
 
 Вывод: КИНО_Кукушка.mp3
 '''
+find . -maxdepth 1 -type f -name "*КИНО*.mp3" ! -iname "*remix*" -printf "%f\n"
