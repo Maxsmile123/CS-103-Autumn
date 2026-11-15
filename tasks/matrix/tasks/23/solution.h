@@ -6,6 +6,46 @@
 typedef int32_t** Matrix;
 
 int Task() {
-    // write your solution here
+    int n;
+
+    scanf("%d", &n);
+
+    if (n < 1 || n > 8)
+    {
+        return 0;
+    }
+
+    int mx = 0;
+    int sm = 0;
+    int min_i = 0;
+    int matrix[n][n];
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (matrix[i][j] > mx)
+            {
+                mx = matrix[i][j];
+                min_i = i;
+            }
+        }
+    }
+
+    for (int j = 0; j < n; j++)
+    {
+        sm += matrix[min_i][j];
+    }
+
+    printf("%d ", sm);
+    
     return 0;
 }
