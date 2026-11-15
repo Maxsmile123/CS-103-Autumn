@@ -8,14 +8,11 @@ typedef int32_t** Matrix;
 int Task() {
     int n;
 
-    scanf("%d", &n);
-
-    if (n < 1 || n > 8)
+    if (scanf("%d", &n) != 1 || n < 1 || n > 8)
     {
         return 0;
     }
 
-    int mx = 0;
     int sm = 0;
     int min_i = 0;
     int matrix[n][n];
@@ -27,6 +24,8 @@ int Task() {
             scanf("%d", &matrix[i][j]);
         }
     }
+
+    int mx = matrix[0][0];
 
     for (int i = 0; i < n; i++)
     {
