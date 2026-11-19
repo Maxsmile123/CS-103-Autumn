@@ -6,28 +6,23 @@
 #include <math.h>
 
 long double Func(long double x) {
-    long double t = x;
-    long double sum = t;
+    long double term = x;
+    long double sum = term;
 
-    for (int k = 1; k < 100; k++) {
-        t = -t * x * x * (2 * k - 1) / (2 * k + 1);
-        sum += t;
+    for (int i = 1; i < 100 && fabsl(term) >= LDBL_EPSILON; i++) {
+        term = -term * x * x * (2 * i - 1) / (2 * i + 1);
+        sum += term;
     }
     return sum;
 }
 
 int Task() {
-    double a, b;
     int n;
-    scanf("%lf %lf %d", &a, &b, &n);
-    double h = (b - a) / n;
+    scanf("%d", &n);
 
     for (int i = 0; i <= n; i++) {
-        long double x = a + i * h;
-        long double s = Func(x);
-        long double d = atanl(x);
-        printf("%f %.20f %.20f %e\n",
-               (double)x, (double)s, (double)d, (double)fabsl(s - d));
+        long double x = 0.5L * i / n;
+        printf("%f %.15f %.15f\n", (double)x, (double)Func(x), (double)atanl(x));
     }
     return 0;
 }
