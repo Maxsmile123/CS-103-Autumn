@@ -6,12 +6,12 @@
 #include <math.h>
 
 long double Func(long double x) {
-    long double term = x;
-    long double sum = term;
+    long double t = x;
+    long double sum = t;
 
-    for (int i = 1; i < 100 && fabsl(term) >= LDBL_EPSILON; i++) {
-        term = -term * x * x * (2 * i - 1) / (2 * i + 1);
-        sum += term;
+    for (int i = 1; i < 100 && fabsl(t) >= LDBL_EPSILON; i++) {
+        t = -t * x * x * (2 * i - 1) / (2 * i + 1);
+        sum += t;
     }
     return sum;
 }
