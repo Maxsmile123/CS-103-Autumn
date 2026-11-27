@@ -1,1 +1,3 @@
-# Изменить расширение всех txt файлов в формат md
+for file in *.txt; do
+    [ -f "$file" ] || continue
+    mv -- "$file" "${file%.txt}.md"
