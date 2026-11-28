@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -8,11 +9,14 @@ int Task() {
     char inp[1024];
     int size = 0;
     scanf(" %[^\n]", inp);
-@@ -17,66 +14,52 @@ int Task() {
+    int c = 0;
+    while (inp[c] != '\0') {
+        if (inp[c] == ' ') {
+            size += 1;
+        }
         c++;
     }
     size += 1;
-
 
     int **matrix_1 = makeMatrix(size);
     int **matrix_2 = makeMatrix(size);
@@ -63,6 +67,7 @@ int Task() {
         }
         puts(" ");
     }
+
     return 0;
 }
 
